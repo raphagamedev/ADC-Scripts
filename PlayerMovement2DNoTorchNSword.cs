@@ -11,13 +11,13 @@ public class PlayerMovement2DNoTorchNSword : MonoBehaviour
     [SerializeField]public GameObject PlayerST;
     //-------------------------------------------
     //      VARIAVEIS DE MOVIMENTACAO
-                    private float move;
+    [SerializeField]private float move;
     [SerializeField]private float moveSpeed = 10f;
     [SerializeField]private bool jumping;
     [SerializeField]private float jumpSpeed = 20f;
     //-------------------------------------------
     //         VARIAVEL DO CHAO
-    [SerializeField]private bool isGrounded;
+                    public bool isGrounded;
                     public Transform feetPosition;
                     public float sizeRadius;
                     public LayerMask  whatIsGround;
@@ -155,6 +155,8 @@ public class PlayerMovement2DNoTorchNSword : MonoBehaviour
                             jumping = true; 
                         }
                                 
+                   
+                    
             //-------------------------------------------------------------------------
             //se for chao entao libera a sprint do andando e bloca o resto
             if(isGrounded)  
@@ -635,12 +637,6 @@ public class PlayerMovement2DNoTorchNSword : MonoBehaviour
         Destroy(gameObject);
         Instantiate(PlayerST, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
     }
-
-
-
-
-
-
 
 }
 
